@@ -1,0 +1,14 @@
+[project]
+name = "hotelreservation-mlflow"
+version = "0.1.0"
+description = "Hotel Reservation Prediction"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.10.1",
+    "mlflow>=2.21.3",
+    "numpy>=2.2.4",
+    "pandas>=2.2.3",
+    "scikit-learn>=1.6.1",
+    "seaborn>=0.13.2",
+]
