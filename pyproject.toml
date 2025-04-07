@@ -9,6 +9,12 @@ dependencies = [
     "mlflow>=2.21.3",
     "numpy>=2.2.4",
     "pandas>=2.2.3",
+    "pip>=25.0.1",
     "scikit-learn>=1.6.1",
     "seaborn>=0.13.2",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
 ]

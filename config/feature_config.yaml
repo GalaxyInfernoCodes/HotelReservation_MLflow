@@ -1,0 +1,29 @@
+# Hotel Reservation Feature Configuration
+
+# Target feature for prediction
+target_feature:
+  - booking_status
+
+# Categorical features
+categorical_features:
+  - Booking_ID  # This is an ID column and should be dropped later
+  - type_of_meal_plan
+  - required_car_parking_space  # Binary but treated as categorical
+  - room_type_reserved
+  - market_segment_type
+  - repeated_guest  # Binary but treated as categorical
+  - arrival_month  # Month can be treated as categorical
+
+# Numerical features
+numerical_features:
+  - no_of_adults
+  - no_of_children
+  - no_of_weekend_nights
+  - no_of_week_nights
+  - lead_time
+  - arrival_year
+  - arrival_date
+  - no_of_previous_cancellations
+  - no_of_previous_bookings_not_canceled
+  - avg_price_per_room
+  - no_of_special_requests
