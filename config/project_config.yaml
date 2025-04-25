@@ -1,4 +1,4 @@
-data_path: data/hotel_reservations.csv
+data_path: data/Hotel Reservations.csv
 output_dir: outputs/
 random_seed: 42
 mlflow_tracking_uri: mlruns

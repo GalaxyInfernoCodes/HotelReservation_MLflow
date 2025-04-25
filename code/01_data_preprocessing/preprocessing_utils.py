@@ -21,14 +21,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
 class DataProcessor:
     def __init__(self, data_file: str, config_file: str, output_dir: str):
         self.data_file = data_file
         self.config_file = config_file
         self.output_dir = output_dir
-    
+
     def load_data(self) -> pd.DataFrame:
-        
+        pass
 
 
 def load_data(file_path: str) -> pd.DataFrame:
