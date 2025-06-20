@@ -17,6 +17,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "ipykernel>=6.29.5",
+    "marimo>=0.13.15",
 ]
 
 [tool.hatch.build.targets.wheel]
