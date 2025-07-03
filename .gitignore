@@ -19,3 +19,6 @@ mlruns/
 
 .databricks
 
+# file system artifacts
+*.DS_Store
+*.ipynb_checkpoints
