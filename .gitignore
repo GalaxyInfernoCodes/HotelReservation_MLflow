@@ -11,9 +11,13 @@ wheels/
 
 # code editors
 .vscode/
+__marimo__
 
 data/
 output/
 mlruns/
 
 code/
+
+# Databricks sync
+.databricks/
