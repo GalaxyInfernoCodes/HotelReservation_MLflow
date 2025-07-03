@@ -1,0 +1,20 @@
+# This is a Databricks asset bundle definition for HotelReservation_MLflow.
+# The Databricks extension requires databricks.yml configuration file.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+
+bundle:
+  name: HotelReservation_MLflow
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      # use your own Databricks instance
+      host: https://dbc-cdb0b7e3-983d.cloud.databricks.com
+
+  ## Optionally, there could be 'staging' or 'prod' targets here.
+  #
+  # prod:
+  #   workspace:
+  #     host: https://dbc-cdb0b7e3-983d.cloud.databricks.com

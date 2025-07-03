@@ -9,8 +9,14 @@ wheels/
 # Virtual environments
 .venv
 
+# Editor
+.vscode/
+
 data/
 output/
 mlruns/
 
 code/
+
+.databricks
+
