@@ -21,3 +21,5 @@ code/
 
 # Databricks sync
 .databricks/
+
+.DS_Store

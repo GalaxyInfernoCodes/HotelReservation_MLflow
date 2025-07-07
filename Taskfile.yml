@@ -1,0 +1,31 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  precommit:
+    cmds:
+      - pre-commit run --all-files
+    silent: false
+
+  start_cluster_data_eng:
+    desc: "Starts Data Engineering Cluster on Databricks"
+    cmds:
+      - databricks clusters start --profile default 1597-824310-3qv9btxa
+
+  list_clusters:
+    desc: "Lists all pinned clusters (to exclude a never ending list of job clusters"
+    cmds:
+      - databricks clusters list --profile default --is-pinned
+
+  fill_null_values:
+    cmds:
+      - uv run scripts/fill_null_values.py
+    silent: false
+
+  install_dev_package:
+    desc: "Add dev dependency via uv"
+    cmds:
+      - uv add {{ .CLI_ARGS }} --optional dev
+    silent: false
