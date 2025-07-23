@@ -29,7 +29,8 @@ class FeatureConfigModel(BaseModel):
 
 
 class ProjectConfigModel(BaseModel):
-    data_path: str
+    data_source_path: str
+    duckdb_data_path: str
     output_dir: str
     random_seed: int
     mlflow_tracking_uri: str

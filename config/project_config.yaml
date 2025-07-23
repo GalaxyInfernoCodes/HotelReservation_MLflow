@@ -1,4 +1,5 @@
-data_path: data/Hotel Reservations.csv
+data_source_path: data/Hotel_Reservations.csv
+duckdb_data_path: outputs/data_duckdb.db
 output_dir: outputs/
 random_seed: 42
 mlflow_tracking_uri: mlruns

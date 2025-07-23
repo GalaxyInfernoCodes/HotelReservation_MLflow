@@ -14,7 +14,7 @@ wheels/
 __marimo__
 
 data/
-output/
+outputs/
 mlruns/
 
 code/

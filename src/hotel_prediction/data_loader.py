@@ -1,4 +1,6 @@
 from hotel_prediction.config import FullConfig
+
+import duckdb
 import pandas as pd
 from typing import Tuple
 from sklearn.model_selection import train_test_split
@@ -6,6 +8,7 @@ from pathlib import Path
 import logging
 
 logger = logging.getLogger(__name__)
+
 
 class DataLoader:
     def __init__(self, config: FullConfig):
@@ -17,7 +20,7 @@ class DataLoader:
         """
         self.config = config
         # Ensure the data path is absolute, relative to the project root
-        data_path = Path(self.config.project.data_path)
+        data_path = Path(self.config.project.data_source_path)
         if not data_path.is_absolute():
             # Assume project root is two levels up from this file (src/hotel_prediction/)
             project_root = Path(__file__).resolve().parent.parent.parent
@@ -25,7 +28,7 @@ class DataLoader:
         logger.info("Loading data from %s", data_path)
         self.hotel_dataframe = pd.read_csv(data_path)
         logger.info("Data loaded successfully")
-
+        self.data_con = duckdb.connect(self.config.project.duckdb_data_path)
 
     def split_dataset(
         self, full_df: pd.DataFrame
@@ -39,7 +42,7 @@ class DataLoader:
             full_df (pd.DataFrame): Full dataframe containing features and target.
 
         Returns:
-            Tuple: 
+            Tuple:
                 - X_train (pd.DataFrame): Training features
                 - X_val (pd.DataFrame): Validation features
                 - X_test (pd.DataFrame): Test features
@@ -114,3 +117,4 @@ class DataLoader:
         val_df.to_csv(output_dir / "validation_data.csv", index=False)
         test_df.to_csv(output_dir / "test_data.csv", index=False)
         logger.info("Saved splits to %s", output_dir)
+
